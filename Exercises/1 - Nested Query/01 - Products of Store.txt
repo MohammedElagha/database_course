@@ -1,0 +1,8 @@
+You have two tables:
+stores (id, name, address)
+products (id, name, price, store_id)
+
+The relationship is One-to-Many.
+
+Write nested query which get products of store which name is 'Metro'
+Şã ÈßÊÇÈÉ ßæÏ áÚÑÖ ãäÊÌÇÊ ÇáãÊÌÑ ÇáĞí íõÓãøóì "ãÊÑæ"

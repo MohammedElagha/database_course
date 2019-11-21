@@ -1,0 +1,8 @@
+You have 3 tables
+students (id, name, phone, email)
+sections (id, section_no)
+student_sections (student_id, section_id) [«·Ê”Ìÿ]
+
+The relationship is Many-to-Many
+
+Write a nested query which get students in section which section_no = 1103

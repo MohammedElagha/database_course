@@ -1,0 +1,10 @@
+You have two tables
+author (id, name)
+book (id, name, publication_year, author_id)
+
+The relationship is One-to-Many
+Author has one or many book
+Book is for only one author
+
+Write a nested query which get author of book which name is 'Tech Ethics'
+Şã ÈßÊÇÈÉ ßæÏ áÚÑÖ ãÄáİ ÇáßÊÇÈ ÇáĞí íõÓãøóì "Tech Ethics"

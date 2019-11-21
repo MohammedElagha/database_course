@@ -12,3 +12,15 @@ WHERE first_show = '2019-10-30 10:00:00'
 SELECT * FROM shows
 ORDER BY first_show DESC
 LIMIT 1
+
+# select when year = 2010
+SELECT * FROM shows
+WHERE show_date LIKE '2010-%'
+
+# select when year = 2010 using another way
+SELECT * FROM shows
+WHERE show_date >= '2010-01-01' AND show_date <= '2010-12-31'
+
+# select when year = 2010
+SELECT * FROM shows
+WHERE YEAR(show_date) = 2010

@@ -17,3 +17,9 @@ WHERE id IN (SELECT salary_id FROM employees WHERE NAME = 'Mohammed');
 SELECT NAME, phone FROM students
 WHERE id IN (SELECT student_id FROM registered_courses WHERE course_id IN (
 		SELECT course_id FROM courses WHERE NAME = 'JAVA 1 Programming'));
+        
+####################################################################################
+
+# Nested Query in Field List
+SELECT id, name, (SELECT hourly_rate FROM salaries WHERE id = employees.salary_id) FROM employees
+WHERE salary_id IN (SELECT id FROM salaries WHERE hourly_rate >= 18);

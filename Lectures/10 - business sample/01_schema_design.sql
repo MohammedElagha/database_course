@@ -2,7 +2,8 @@ CREATE TABLE clients (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	NAME VARCHAR(44),
 	phone BIGINT,
-	email VARCHAR(100)
+	email VARCHAR(100),
+	profit_percentage DOUBLE
 );
 
 CREATE TABLE durations (
@@ -60,6 +61,3 @@ CREATE TABLE used_promo_codes (
 	FOREIGN KEY (travel_id) REFERENCES travels (id),
 	FOREIGN KEY (promo_code_id) REFERENCES promo_codes (id)
 );
-
-ALTER TABLE drivers
-ADD COLUMN profit_percentage DOUBLE;

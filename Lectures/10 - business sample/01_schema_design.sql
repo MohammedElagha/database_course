@@ -2,8 +2,7 @@ CREATE TABLE clients (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	NAME VARCHAR(44),
 	phone BIGINT,
-	email VARCHAR(100),
-	profit_percentage DOUBLE
+	email VARCHAR(100)
 );
 
 CREATE TABLE durations (
@@ -33,7 +32,8 @@ CREATE TABLE client_subscriptions (
 CREATE TABLE drivers (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	NAME VARCHAR(44),
-	phone BIGINT
+	phone BIGINT,
+	profit_percentage DOUBLE
 );
 
 CREATE TABLE promo_codes (

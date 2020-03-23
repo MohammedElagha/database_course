@@ -39,9 +39,16 @@ CREATE TABLE drivers (
 CREATE TABLE promo_codes (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	promo_code TEXT,
-	discount_percentage DOUBLE,
-	driver_id INT,
-	FOREIGN KEY (id) REFERENCES drivers (id)
+	discount_percentage DOUBLE
+);
+
+CREATE TABLE client_promo_codes (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	client_subscription_id INT,
+	promo_code_id INT,
+	FOREIGN KEY (client_subscription_id) REFERENCES client_subscriptions (id),
+	FOREIGN KEY (promo_code_id) REFERENCES promo_codes (id)
+	
 );
 
 CREATE TABLE travels (

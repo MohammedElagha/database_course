@@ -8,6 +8,16 @@ BEGIN
 END $$
 DELIMITER ;
 
+
+DELIMITER $$
+create trigger updateSalaryWhenUpdateSalaryId 
+BEFORE UPDATE on employees 
+FOR EACH ROW
+BEGIN 
+UPDATE salaries SET id = NEW.salary_id WHERE id = OLD.salary_id; 
+end
+DELIMITER ;
+
 ##############################################
 
 # After Insert
@@ -16,7 +26,7 @@ CREATE TRIGGER increaseEmployeesStatistics
 AFTER INSERT ON employees
 FOR EACH ROW
 BEGIN
-	UPDATE statistics SET employees_no = employees_no + 1;
+	UPDATE statistics SET val = val + 1 WHERE name = 'employees_no';
 END $$
 DELIMITER ;
 
@@ -28,6 +38,6 @@ CREATE TRIGGER decreaseEmployeesStatistics
 AFTER DELETE ON employees
 FOR EACH ROW
 BEGIN
-	UPDATE statistics SET employees_no = employees_no - 1;
+	UPDATE statistics SET val = val - 1 WHERE name = 'employees_no';
 END $$
 DELIMITER ;
